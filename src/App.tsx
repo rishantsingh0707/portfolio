@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDown, Download, Github, Linkedin, Mail, ExternalLink, Menu, X } from 'lucide-react';
 
 const App = () => {
@@ -77,13 +77,7 @@ const App = () => {
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className={`absolute w-2 h-2 bg-cyan-400 rounded-full opacity-20 animate-pulse`}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${3 + Math.random() * 4}s`
-            }}
+            className={`particle absolute w-2 h-2 bg-cyan-400 rounded-full opacity-20 animate-pulse particle-animation particle-${i}`}
           ></div>
         ))}
         {/* Glowing orbs */}
@@ -232,8 +226,7 @@ const App = () => {
             {skills.map((skill, index) => (
               <div
                 key={skill}
-                className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 text-center group hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105 hover:bg-gray-800/70"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className={`bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 text-center group hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105 hover:bg-gray-800/70 skill-${index}`}
               >
                 <div className="text-lg font-semibold text-white group-hover:text-cyan-400 transition-colors">
                   {skill}
@@ -291,11 +284,11 @@ const App = () => {
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <div
                 key={project.title}
-                className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700 group hover:border-cyan-500 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/10"
-                style={{ animationDelay: `${index * 200}ms` }}
+                className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700 group hover:border-cyan-500 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/10 project-card"
+                
               >
                 <div className="relative overflow-hidden">
                   <img 
@@ -429,18 +422,21 @@ const App = () => {
             <a 
               href="https://github.com/alexjohnson"
               className="text-gray-400 hover:text-cyan-400 transition-colors p-2 hover:bg-gray-800 rounded-full"
+              aria-label="GitHub"
             >
               <Github size={24} />
             </a>
             <a 
               href="https://linkedin.com/in/alexjohnson"
               className="text-gray-400 hover:text-cyan-400 transition-colors p-2 hover:bg-gray-800 rounded-full"
+              aria-label="LinkedIn"
             >
               <Linkedin size={24} />
             </a>
             <a 
               href="mailto:alex.johnson@email.com"
               className="text-gray-400 hover:text-cyan-400 transition-colors p-2 hover:bg-gray-800 rounded-full"
+              aria-label="Email"
             >
               <Mail size={24} />
             </a>
