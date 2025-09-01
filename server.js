@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 // Contact form handler
 app.post('/contact', async (req, res) => {
     const { name, email, message } = req.body;
-    
+
     try {
         // Save to file (you can replace this with email sending logic)
         const contactData = {
@@ -35,18 +35,18 @@ app.post('/contact', async (req, res) => {
             message,
             timestamp: new Date().toISOString()
         };
-        
+
         // Create contacts directory if it doesn't exist
         if (!fs.existsSync('./contacts')) {
             fs.mkdirSync('./contacts');
         }
-        
+
         // Save contact to file
         const filename = `contact_${Date.now()}.json`;
         fs.writeFileSync(`./contacts/${filename}`, JSON.stringify(contactData, null, 2));
-        
+
         console.log('New contact submission:', contactData);
-        
+
         res.json({ success: true, message: 'Message sent successfully!' });
     } catch (error) {
         console.error('Error handling contact form:', error);
