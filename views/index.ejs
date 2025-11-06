@@ -13,8 +13,25 @@
 </head>
 <style>
     .project-image {
-        justify-content: center;
-        height: auto;
+        width: 100%;
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .project-image video {
+        width: 120%;
+        height: 100%;
+        object-fit: contain;
     }
 </style>
 
@@ -182,7 +199,7 @@
                 <div class="project-card">
                     <div class="project-image">
                         <video width="auto" autoplay muted loop>
-                            <source src="/images/Homepage.mp4" type="video/mp4">
+                            <source src="/images/Blog/Homepage.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
@@ -208,6 +225,14 @@
                             </a>
                         </div>
                     </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img class="slide" src="images/Hirely/Hirely.png"
+                            style="display: block; width: 100%; height:100%;margin: 0 auto;object-fit: cover;">
+                        <img class="slide" src="images/Hirely/Image2.png" style="display: none;">
+                        <img class="slide" src="images/Hirely/Image3.png" style="display: none;">
+                    </div>
 
                     <div class="project-content">
                         <h3>Hirely</h3>
@@ -231,7 +256,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Footer -->
@@ -247,6 +271,24 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        let slides = document.querySelectorAll(".project-image .slide");
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? "block" : "none";
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    </script>
 
     <script src="/js/script.js"></script>
 </body>
