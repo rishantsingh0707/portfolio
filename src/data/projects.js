@@ -1,6 +1,6 @@
 import BlogingImage from "../assets/Bloging.png";
 import Hirely from "../assets/Hirely.png";
-import DevHub from "../assets/DevHub.png";
+import devhub from "../assets/devhub.png";
 import Chatty from "../assets/Chatty.png";
 
 export const projects = [
@@ -17,7 +17,7 @@ export const projects = [
     id: 2,
     title: "DevHub",
     description: "It enables users to create and join live coding sessions with integrated code execution, chat, and video calling. DevHub focuses on clean architecture, performance, and a smooth developer experience.",
-    image: DevHub,
+    image: devhub,
     technologies: ["Stream", "Axios", "Node.js", "Express", "Clerk", "DaizyUI", "MongoDB", "JavaScript"],
     github: "https://github.com/rishantsingh0707/DevHub",
     demo: "https://dev-hub-nu-ten.vercel.app"
