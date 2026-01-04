@@ -1,7 +1,7 @@
 import BlogingImage from "../assets/Bloging.png";
 import Hirely from "../assets/Hirely.png";
 import Chatty from "../assets/Chatty.png";
-import DevHub from "../assets/DevHub.png";
+import DevHub from "../assets/devHub.png";
 
 export const projects = [
   {
