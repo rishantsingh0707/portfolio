@@ -1,101 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-* {
-  font-family: 'Inter', sans-serif;
-}
 
-html {
+* {
   scroll-behavior: smooth;
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
 }
 
-@keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate(0, 0);
   }
   33% {
-    transform: translate(30px, -50px) scale(1.1);
+    transform: translate(30px, -30px);
   }
   66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
+    transform: translate(-20px, 20px);
   }
 }
 
-@keyframes float {
+@keyframes drift {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translate(0, 0);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translate(40px, 40px);
   }
 }
 
-.animate-fade-in {
-  animation: fade-in 1s ease-out forwards;
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
 }
 
-.animate-fade-in-delay {
-  animation: fade-in 1s ease-out 0.3s forwards;
-  opacity: 0;
-}
+@layer components {
+  .animate-float-slow {
+    animation: float-slow 20s ease-in-out infinite;
+  }
 
-.animate-blob {
-  animation: blob 7s infinite;
-}
+  .animate-drift {
+    animation: drift 30s ease-in-out infinite;
+  }
 
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #1f2937;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #374151;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #06b6d4;
-}
-
-/* Smooth transitions for all interactive elements */
-button, a, input, textarea {
-  transition: all 0.3s ease;
-}
-
-/* Gradient text selection */
-::selection {
-  background: #06b6d4;
-  color: white;
+  .animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
+  }
 }
