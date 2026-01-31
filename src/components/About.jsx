@@ -48,6 +48,18 @@ export default function About() {
             <span className="px-4 py-2 bg-gray-900 border border-gray-800 rounded-lg text-gray-300">
               Axios
             </span>
+            <span className="px-4 py-2 bg-gray-900 border border-gray-800 rounded-lg text-gray-300">
+              GitHub
+            </span>
+            <span className="px-4 py-2 bg-gray-900 border border-gray-800 rounded-lg text-gray-300">
+              TypeScript
+            </span>
+            <span className="px-4 py-2 bg-gray-900 border border-gray-800 rounded-lg text-gray-300">
+              REST APIs
+            </span>
+            <span className="px-4 py-2 bg-gray-900 border border-gray-800 rounded-lg text-gray-300">
+              SQL
+            </span>
           </div>
         </div>
       </div>
