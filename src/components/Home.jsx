@@ -31,14 +31,13 @@ export default function Home() {
           </button>
 
           <a
-            href="/Rishant_Singh_Resume_2026"
+            href="/Rishant_Singh_Resume_2026.pdf"
             download="Resume.pdf"
             className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 border border-gray-800 text-white font-semibold rounded-lg hover:border-gray-700 transition-colors"
           >
             Download Resume
           </a>
         </div>
-
         <div className="flex justify-center">
           <button
             onClick={() => scrollToSection('about')}
