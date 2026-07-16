@@ -2,10 +2,21 @@ import BlogingImage from "../assets/Bloging.png";
 import Hirely from "../assets/Hirely.png";
 import devhub from "../assets/devhub.png";
 import Chatty from "../assets/Chatty.png";
+import LearnIQ from "../assets/LearnIQ.png";
+
 
 export const projects = [
   {
     id: 1,
+    title: "Ai-Study-companion",
+    description: "An AI-powered study assistant that lets you upload your own documents and turns them into an interactive, RAG-powered learning experience — chat with your notes, generate summaries, quizzes, flashcards, and interview questions on demand.",
+    image: LearnIQ,
+    technologies: ["React", "Oauth2", "Node.js", "Express", "Groq", "MongoDB", "TypeScript", "CromaDB","Redis", "Gemini Embeddings"],
+    github: "https://github.com/rishantsingh0707/ai-study-companion",
+    demo: "https://learniq-steel.vercel.app"
+  },
+  {
+    id: 2,
     title: "Chatty",
     description: "A secure real-time chat application featuring friend-only messaging, unique user codes for search, live online status, and a modern UI with dark/light mode. ",
     image: Chatty,
@@ -14,7 +25,7 @@ export const projects = [
     demo: "https://chatty-9kn5.vercel.app"
   },
   {
-    id: 2,
+    id: 3,
     title: "DevHub",
     description: "It enables users to create and join live coding sessions with integrated code execution, chat, and video calling. DevHub focuses on clean architecture, performance, and a smooth developer experience.",
     image: devhub,
@@ -23,7 +34,7 @@ export const projects = [
     demo: "https://dev-hub-nu-ten.vercel.app"
   },
   {
-    id: 3,
+    id: 4,
     title: "Blogging Application",
     description: "A comprehensive REST API for a blogging platform built with Node.js,MongoDB and Express, featuring user authentication, post management, and comment functionality,like functionality.",
     image: BlogingImage,
@@ -32,7 +43,7 @@ export const projects = [
     demo: "https://bloging-webpage.onrender.com"
   },
   {
-    id: 4,
+    id: 5,
     title: "Hirely",
     description: "An interactive dashboard for data visualization with real-time updates and beautiful charts.",
     image: Hirely,
