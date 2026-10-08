@@ -72,42 +72,21 @@ function Nav() {
   );
 }
 
-// 3D-tilting photo. Click it to swap in a different image for this visit.
+// 3D-tilting photo loaded from the public folder.
 function PhotoCard() {
-  const [src, setSrc] = useState(CFG.PHOTO);
-  const [bad, setBad] = useState(false);
-  const card = useRef(null), file = useRef(null);
+  const card = useRef(null);
   const move = (e) => {
     const r = card.current.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height, s = card.current.style;
     s.transform = `rotateY(${(x - 0.5) * 26}deg) rotateX(${(0.5 - y) * 26}deg) scale(1.04)`;
     s.setProperty("--mx", x * 100 + "%"); s.setProperty("--my", y * 100 + "%");
   };
-  const pick = (e) => {
-    const f = e.target.files[0]; if (!f) return;
-    const r = new FileReader();
-    r.onload = () => { setBad(false); setSrc(r.result); };
-    r.readAsDataURL(f);
-  };
   return (
     <div className="photo">
-      <div className="card3d" ref={card} role="button" tabIndex={0} aria-label="Profile photo. Click to change it."
-        onClick={() => file.current.click()}
-        onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); file.current.click(); } }}
+      <div className="card3d" ref={card}
         onMouseMove={move} onMouseLeave={() => (card.current.style.transform = "")}>
-        {src && !bad ? (
-          <img src={src} alt="Rishant" onError={() => setBad(true)} />
-        ) : (
-          <svg viewBox="0 0 200 250">
-            <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#8B5CF6" /><stop offset="1" stopColor="#A78BFA" /></linearGradient></defs>
-            <rect width="200" height="250" fill="url(#g)" opacity=".35" />
-            <circle cx="100" cy="96" r="42" fill="#F4F4F5" opacity=".9" />
-            <path d="M28 250c0-52 32-82 72-82s72 30 72 82z" fill="#F4F4F5" opacity=".9" />
-          </svg>
-        )}
+        <img src={CFG.PHOTO} alt="Rishant" />
         <div className="sheen" />
       </div>
-
-      <input ref={file} type="file" accept="image/*" hidden onChange={pick} />
     </div>
   );
 }
