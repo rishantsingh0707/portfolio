@@ -106,7 +106,7 @@ function PhotoCard() {
         )}
         <div className="sheen" />
       </div>
-      
+
       <input ref={file} type="file" accept="image/*" hidden onChange={pick} />
     </div>
   );
@@ -118,7 +118,7 @@ function Hero() {
       <div>
         <h1>Hi, I'm <span className="grad">Rishant</span>.</h1>
         <Typer words={ROLES} />
-        <p className="lead">I build fast, full-stack web apps with the MERN stack, from AI study tools to GST-ready invoicing, and I ship them with Docker and CI/CD.</p>
+        <p className="lead">I build modern full-stack products with MERN, AI, and a focus on performance, usability, and real-world impact.</p>
         <div className="chips">{SKILLS.map((s) => <span className="chip" key={s}>{s}</span>)}</div>
         <div className="btns">
           <a className="btn p" href="#projects">See my projects</a>
@@ -136,9 +136,11 @@ function About() {
       <Rv as="h2">About me</Rv>
       <Rv className="about">
         <div>
-          <p>I'm a Computer Applications student in Pune who learns by building. Most of what I know came from shipping real projects, breaking them, and fixing them.</p>
-          <p>I enjoy the whole path from an idea to a running product: React interfaces, Node and Express APIs, databases and caches, and the Docker, Kubernetes and AWS pieces that put it online.</p>
-          <p>I'm looking for fresher or junior full-stack roles, remote within India or based in Pune.</p>
+          <p>I'm a Computer Applications student in Pune who learns by building. Most of what I know comes from creating real projects, breaking things, and figuring out how to make them work better.</p>
+
+          <p>I enjoy taking an idea from concept to a working product—from React interfaces and Node.js APIs to databases, authentication, and AI-powered features. I've built everything from AI study tools to business and invoicing platforms.</p>
+
+          <p>I'm looking for fresher or junior full-stack roles, remote within India or based in Pune, where I can keep building, learning, and contributing to real products.</p>
         </div>
         <div className="stats">
           <div className="stat"><Count to={PROJECTS.length} /><span>projects shipped</span></div>
@@ -216,6 +218,7 @@ function Contact() {
       </form>
       <div className="soc">
         <a className="btn" href={CFG.GH} target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a className="btn" href={CFG.LI} target="_blank" rel="noopener noreferrer">LinkedIn</a>
 
       </div>
     </section>
